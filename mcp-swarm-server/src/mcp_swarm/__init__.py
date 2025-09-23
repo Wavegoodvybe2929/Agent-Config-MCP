@@ -18,15 +18,14 @@ __email__ = "dev@mcpswarm.com"
 
 # Core imports for easy access
 from .server import SwarmMCPServer, create_server
-from .swarm import SwarmCoordinator
-from .memory import MemoryManager
-from .agents import AgentManager
+# from .swarm import SwarmCoordinator  # Temporarily disabled due to numpy dependency
+# from .memory import MemoryManager    # Temporarily disabled 
+# from .agents import AgentManager     # Temporarily disabled
 
 __all__ = [
     "SwarmMCPServer",
-    "create_server", 
-    "SwarmCoordinator",
-    "MemoryManager",
-    "AgentManager",
-    "__version__",
+    "create_server",
+    # "SwarmCoordinator",  # Temporarily disabled
+    # "MemoryManager",     # Temporarily disabled
+    # "AgentManager",      # Temporarily disabled
 ]

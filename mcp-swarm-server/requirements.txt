@@ -29,3 +29,9 @@ psutil>=5.9.0
 # HTTP client for external API calls
 httpx>=0.25.0
 aiofiles>=23.0.0
+
+# File system monitoring for configuration changes
+watchdog>=3.0.0
+
+# YAML parsing for agent configuration frontmatter
+PyYAML>=6.0.0
