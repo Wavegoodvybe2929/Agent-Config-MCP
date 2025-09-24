@@ -208,6 +208,35 @@ data/memory.db*
 data/backups/
 tmp/
 .env.local
+
+# MCP Swarm Intelligence Server Generated Files
+.mcp-cache/
+.swarm-data/runtime/
+.hive-memory/sessions/
+.runtime-data/
+.config-backups/*.backup
+.quality-gates/temp/
+.dev-cache/
+.dev-logs/
+.prod-cache/
+.prod-logs/
+
+# Temporary and cache files
+*.swarm-temp
+*.mcp-temp
+*.coordination-cache
+*.memory-snapshot
+
+# Runtime logs and metrics
+*.runtime.log
+*.metrics.json
+*.performance.data
+*.agent-cache
+*.dev.log
+*.debug.json
+*.test-data
+*.prod.log
+*.backup.gz
 .env.production
 config/local.yaml
 config/production.yaml

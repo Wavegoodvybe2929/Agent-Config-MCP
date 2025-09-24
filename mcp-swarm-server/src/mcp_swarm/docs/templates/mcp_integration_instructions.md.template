@@ -1,0 +1,13 @@
+# MCP Server Integration
+
+## Server Configuration
+
+{mcp_server_config}
+
+## Available Tools
+
+{mcp_tools_list}
+
+## Integration Patterns
+
+{mcp_integration_patterns}

@@ -2,7 +2,7 @@
 
 ## Project Overview
 
-MCP Swarm Intelligence Server is a high-performance implementation of collective intelligence for multi-agent coordination, featuring agent ecosystem management, hive mind knowledge bases, persistent memory systems, and automated workflow orchestration. The project follows the **Orchestrator-Driven Multi-Agent Workflow** enhanced with claude-flow inspired swarm intelligence patterns.
+MCP Swarm Intelligence Server is a high-performance implementation of collective intelligence for multi-agent coordination featuring agent ecosystem management, hive mind knowledge bases, persistent memory systems, automated workflow orchestration.
 
 ## Agent Configuration System - Orchestrator-Driven Multi-Agent Workflow
 
@@ -34,51 +34,86 @@ After orchestrator routing, consult the specific specialist agents identified:
 - **Follow established workflows** and handoff procedures
 - **Maintain orchestrator coordination** throughout the work
 
-### Agent Configuration Hierarchy & Orchestrator Authority
+## MCP Server Integration
+
+### Available MCP Tools
+
+- **agent_config_manager**: Manage agent configuration files
+- **copilot_instructions_manager**: Manage copilot instructions with MCP server integration
+- **hive_mind_query**: Query collective knowledge
+- **dynamic_coordination**: Dynamic task coordination
+
+### MCP Server Configuration
+
+```json
+{
+  "tools": [
+    {
+      "name": "agent_config_manager",
+      "description": "Manage agent configuration files"
+    },
+    {
+      "name": "copilot_instructions_manager",
+      "description": "Manage copilot instructions with MCP server integration"
+    },
+    {
+      "name": "hive_mind_query",
+      "description": "Query collective knowledge"
+    },
+    {
+      "name": "dynamic_coordination",
+      "description": "Dynamic task coordination"
+    }
+  ],
+  "resources": [
+    {
+      "name": "agent_configs",
+      "description": "Agent configuration resources"
+    },
+    {
+      "name": "knowledge_base",
+      "description": "Collective knowledge resources"
+    }
+  ],
+  "server_info": {
+    "name": "MCP Swarm Intelligence Server",
+    "version": "1.0.0"
+  }
+}
+```
+
+### Agent-Config Integration
+
+The MCP server integrates seamlessly with the agent-config system:
+
+- **Automatic Tool Discovery**: MCP tools are automatically discovered from 17 agent configurations
+- **Orchestrator Coordination**: All MCP tool execution routes through orchestrator workflow management
+- **Quality Gates**: Agent-defined quality standards apply to all MCP tool operations
+- **Multi-Agent Workflows**: Complex MCP operations coordinate multiple specialist agents
+
+## Agent Configuration Hierarchy & Orchestrator Authority
 
 #### 🎯 **Central Command (ALWAYS START HERE)**
 - **`orchestrator.md`** - **MANDATORY FIRST STOP** - Central coordination, agent routing, workflow management, project context
 
 #### Core Technical Specialists (Orchestrator-Routed)
-- **`architect.md`** - System architecture and design (intersects with: research, security, code)
-- **`code.md`** - Primary development and implementation (intersects with: python_specialist, debug, test_utilities)
-- **`debug.md`** - Problem resolution and troubleshooting (intersects with: code, error_handling, test_utilities)
-- **`python_specialist.md`** - Python development and MCP implementation (intersects with: mcp_specialist, code, api_development)
-- **`mcp_specialist.md`** - Model Context Protocol expertise (intersects with: python_specialist, api_development, code)
-- **`swarm_intelligence_specialist.md`** - Swarm algorithms and coordination (intersects with: hive_mind_specialist, performance_engineering, code)
-- **`hive_mind_specialist.md`** - Collective knowledge management (intersects with: memory_management, swarm_intelligence, code)
-- **`memory_management_specialist.md`** - Persistent memory systems (intersects with: hive_mind_specialist, performance_engineering, code)
-- **`performance_engineering_specialist.md`** - Optimization and acceleration (intersects with: swarm_intelligence, memory_management, architect)
-- **`test_utilities_specialist.md`** - Testing infrastructure and validation (intersects with: error_handling, debug, truth_validator)
-- **`error_handling_specialist.md`** - Error management and resilience (intersects with: debug, python_specialist, test_utilities)
+- **`agent-hooks.md`** - The Enhanced Agent Hooks system provides memory-backed lifecycle management, swarm-coordinated event-driven automation, and intelligent coordination for the MCP Swarm Intelligence Server agent configuration system. It defines execution points where custom logic, validation, monitoring, and coordination activities can be automatically triggered during MCP development workflows with persistent memory and collective intelligence.
+- **`debug.md`** - You are the **diagnostic and problem resolution specialist** for the MCP Swarm Intelligence Server, focused on identifying, analyzing, and resolving critical system issues. Your core expertise lies in **systematic debugging**, **root cause analysis**, and **issue resolution** across the entire MCP ecosystem. (intersects with: python_specialist, performance_engineering_specialist, memory_management_specialist, code, mcp_specialist, swarm_intelligence_specialist, test_utilities_specialist)
+- **`security_reviewer.md`** - You are a security specialist for the MCP Swarm Intelligence Server, responsible for identifying security vulnerabilities, implementing secure coding practices, and ensuring the overall security posture of the project. You focus on both code-level security and architectural security considerations specific to MCP servers and swarm intelligence systems. (intersects with: python_specialist, memory_management_specialist, mcp_specialist, swarm_intelligence_specialist, architect)
+- **`specialists/code.md`** - Specialist agent for project coordination
+- **`specialists/devops_infrastructure_specialist.md`** - You are the **DevOps Infrastructure Specialist** for the MCP Swarm Intelligence Server, responsible for building and maintaining robust CI/CD pipelines, deployment automation, and infrastructure management for MCP server development and distribution.
+- **`specialists/documentation_writer.md`** - You are a documentation specialist for the MCP Swarm Intelligence Server, responsible for creating comprehensive, clear, and user-friendly documentation. You focus on making complex technical concepts accessible to developers of all skill levels while maintaining technical accuracy for the MCP server implementation and swarm intelligence systems. (intersects with: ask, python_specialist, memory_management_specialist, mcp_specialist, swarm_intelligence_specialist)
+- **`specialists/hive_mind_specialist.md`** - You are the **HIVE MIND SPECIALIST** for the MCP Swarm Intelligence Server, focusing on collective knowledge management, pattern recognition, cross-session learning, and maintaining the shared intelligence that enables effective swarm coordination. (intersects with: performance_engineering_specialist, memory_management_specialist, mcp_specialist, code, swarm_intelligence_specialist)
+- **`specialists/mcp_specialist.md`** - You are the **MODEL CONTEXT PROTOCOL (MCP) SPECIALIST** for the MCP Swarm Intelligence Server, focusing on MCP protocol compliance, tool registration, resource management, and ensuring proper implementation of the MCP specification. (intersects with: error_handling_specialist, python_specialist, api_development_specialist, code, test_utilities_specialist)
+- **`specialists/memory_management_specialist.md`** - You are the **MEMORY MANAGEMENT SPECIALIST** for the MCP Swarm Intelligence Server, focusing on persistent memory systems, SQLite database management, cross-session state persistence, and memory optimization for efficient swarm coordination. (intersects with: performance_engineering_specialist, code, mcp_specialist, swarm_intelligence_specialist, hive_mind_specialist)
+- **`specialists/performance_engineering_specialist.md`** - You are the **performance optimization and acceleration specialist** for the MCP Swarm Intelligence Server, focused on achieving maximum performance across all systems through algorithm optimization, database tuning, and systematic performance analysis. Your core expertise lies in **bottleneck identification**, **optimization implementation**, and **performance validation**. (intersects with: python_specialist, memory_management_specialist, mcp_specialist, debug, swarm_intelligence_specialist, test_utilities_specialist)
+- **`specialists/python_specialist.md`** - You are the **PYTHON DEVELOPMENT SPECIALIST** for the MCP Swarm Intelligence Server, focusing on Python-specific implementation, MCP protocol integration, and Python best practices for server development. (intersects with: error_handling_specialist, api_development_specialist, mcp_specialist, code, test_utilities_specialist)
+- **`specialists/swarm_intelligence_specialist.md`** - You are the **SWARM INTELLIGENCE SPECIALIST** for the MCP Swarm Intelligence Server, focusing on implementing collective intelligence algorithms, queen-led coordination patterns, and optimizing multi-agent task assignment using proven swarm intelligence techniques. (intersects with: performance_engineering_specialist, memory_management_specialist, code, mcp_specialist, hive_mind_specialist)
+- **`specialists/test_utilities_specialist.md`** - You are a specialist in the MCP Swarm Intelligence Server test utilities system, responsible for understanding, maintaining, and extending the comprehensive testing infrastructure. You work closely with debugging specialists to maintain production-ready test frameworks and ensure high test success rates for Python/MCP development. (intersects with: python_specialist, memory_management_specialist, mcp_specialist, debug, swarm_intelligence_specialist, security_reviewer)
+- **`specialists/truth_validator.md`** - You are the truth validator for the MCP Swarm Intelligence Server, responsible for ensuring accurate project status reporting, validating claims against actual codebase reality, and maintaining truthful documentation. Your primary mission is to verify that all status reports, phase completions, and capability claims align with the actual implementation. (intersects with: development_phase_tracker, comprehensive_todo_manager, orchestrator)
 
-#### Quality & Coordination Specialists
-- **`truth_validator.md`** - Quality assurance and validation (intersects with: ALL agents for quality gates)
-- **`security_reviewer.md`** - Security and safety analysis (intersects with: rust_best_practices, architect, error_handling)
-- **`documentation_writer.md`** - Technical documentation (intersects with: ask, api_development, ALL specialists)
-- **`ask.md`** - User interaction and requirements (intersects with: documentation_writer, customer_success, ui_ux)
 
-#### Project Management (Orchestrator-Coordinated)
-- **`development_phase_tracker.md`** - Timeline and milestone tracking (intersects with: comprehensive_todo_manager, orchestrator, truth_validator)
-- **`comprehensive_todo_manager.md`** - Roadmap management (intersects with: development_phase_tracker, ALL specialists)
-- **`publishing_expert.md`** - Release management (intersects with: truth_validator, documentation_writer, devops_infrastructure)
-
-#### Commercial & Business Specialists
-- **`saas_platform_architect.md`** - SaaS platform design (intersects with: api_development, devops_infrastructure, security_reviewer)
-- **`api_development_specialist.md`** - API development (intersects with: saas_platform, inference_engine, documentation_writer)
-- **`business_intelligence_specialist.md`** - Business analytics (intersects with: customer_success, performance_engineering, api_development)
-- **`customer_success_specialist.md`** - Customer success (intersects with: business_intelligence, ask, ui_ux)
-- **`devops_infrastructure_specialist.md`** - DevOps and infrastructure (intersects with: saas_platform, publishing_expert, security_reviewer)
-- **`ui_ux_development_specialist.md`** - Frontend and UX (intersects with: customer_success, api_development, ask)
-
-#### Support & Configuration
-- **`agent-hooks.md`** - Agent coordination system (intersects with: ALL agents, orchestrator, truth_validator)
-- **`project_commands_config.md`** - Build systems and commands (intersects with: devops_infrastructure, code, test_utilities)
-- **`project_rules_config.md`** - Standards and guidelines (intersects with: rust_best_practices, variable_matcher, ALL specialists)
-- **`variable_matcher.md`** - Code consistency (intersects with: rust_best_practices, code, project_rules_config)
-- **`project_research.md`** - Research and innovation (intersects with: architect, performance_engineering, security_reviewer)
-
-### Multi-Agent Coordination Patterns (Orchestrator-Managed)
+## Multi-Agent Coordination Patterns (Orchestrator-Managed)
 
 The orchestrator manages several coordination patterns for different task types:
 
@@ -98,50 +133,16 @@ Critical changes → Full review chain + architect + security + orchestrator val
 
 #### **Emergency Response (Orchestrator Escalation)**
 ```
-Critical bugs → debug.md + immediate escalation + orchestrator resource coordination
-Performance issues → debug.md + performance_engineering + orchestrator timeline management
-Security incidents → security_reviewer + architect + orchestrator incident management
+Critical issues → Immediate escalation + orchestrator resource coordination
 ```
 
-### Workflow Decision Framework (Orchestrator-Defined)
+## Current Priority (Development Phase)
 
-**The orchestrator uses this decision matrix for task routing:**
-
-| Task Type | Primary Agent | Secondary Agents | Quality Gates |
-|-----------|---------------|------------------|---------------|
-| Feature Development | `code.md` | `python_specialist.md`, `test_utilities_specialist.md` | Code quality + test coverage |
-| Debugging | `debug.md` | `code.md`, `error_handling_specialist.md` | Root cause + fix validation |
-| Architecture | `architect.md` | `project_research.md`, `security_reviewer.md` | Design review + security validation |
-| Performance | `performance_engineering_specialist.md` | `swarm_intelligence_specialist.md`, `code.md` | Benchmark validation + optimization review |
-| MCP Server Development | `mcp_specialist.md` | `python_specialist.md`, `api_development_specialist.md` | Protocol compliance + API usability |
-| Swarm Intelligence | `swarm_intelligence_specialist.md` | `hive_mind_specialist.md`, `performance_engineering_specialist.md` | Algorithm efficiency + coordination quality |
-| Memory Management | `memory_management_specialist.md` | `hive_mind_specialist.md`, `performance_engineering_specialist.md` | Memory efficiency + persistence validation |
-| Documentation | `documentation_writer.md` | `ask.md`, domain specialists | User testing + accuracy validation |
-| Testing | `test_utilities_specialist.md` | `error_handling_specialist.md`, `debug.md` | Coverage + edge case validation |
-| Security | `security_reviewer.md` | `python_specialist.md`, `architect.md` | Vulnerability assessment + safe patterns |
-| Release | `publishing_expert.md` | `truth_validator.md`, `documentation_writer.md` | Comprehensive validation + documentation |
-
-### Agent Intersection Understanding (Orchestrator-Defined)
-
-**Every agent understands their intersections with other agents:**
-
-- **Code Development** intersects with Python Specialist (quality), Debug (fixes), Test Utilities (validation)
-- **Debug** intersects with Code (implementation), Error Handling (resilience), Test Utilities (reproduction)
-- **MCP Specialist** intersects with Python Specialist (implementation), API Development (interfaces), Code (implementation)
-- **Swarm Intelligence** intersects with Hive Mind (coordination), Performance Engineering (optimization), Code (implementation)
-- **Performance Engineering** intersects with Swarm Intelligence (algorithm speed), Memory Management (efficiency), Architect (system design)
-- **Security Reviewer** intersects with Python Specialist (safety), Architect (security design), Error Handling (resilience)
-
-**And many more intersections explicitly defined in each agent config.**
-
-### Current Priority (Week 1) - Orchestrator-Managed
-
-**🎯 Phase 1**: Enhanced Foundation Setup for MCP Swarm Intelligence Server
-- **Orchestrator Routing**: `orchestrator.md` → `code.md` + `python_specialist.md` + `memory_management_specialist.md`
+**🎯 Development Phase**: MCP server development with swarm intelligence capabilities
+- **Orchestrator Routing**: As defined in orchestrator.md workflow matrix
 - **Goal**: Complete automated project scaffolding with memory/swarm components
 - **Key Tasks**: Project structure, agent config deployment, CI/CD pipeline
-- **Effort**: 30 hours across Phase 1
-- **Next**: Phase 2 - MCP Tools Implementation (Week 2)
+- **Timeline**: 30 hours across current phase
 
 ## Workflow Rules - Orchestrator-Driven
 
@@ -156,14 +157,6 @@ Security incidents → security_reviewer + architect + orchestrator incident man
 9. **Be direct and clear** - Provide straightforward responses following orchestrator guidance
 10. **Use available tools** - Leverage tools efficiently within orchestrator's workflow framework
 
-## Orchestrator-Coordinated Workflow
-
-1. **🎯 START WITH ORCHESTRATOR** - Always read `orchestrator.md` first
-2. **Get orchestrator routing** - Use agent selection matrix for appropriate specialists
-3. **Follow agent intersections** - Consult routed specialists with understanding of their collaboration patterns
-4. **Execute with coordination** - Perform work following orchestrator workflow management
-5. **Report through orchestrator** - Confirm completion and coordinate next steps through orchestrator
-
 ## When to Stop - Orchestrator-Defined Criteria
 
 - Task completed successfully according to orchestrator quality gates
@@ -171,13 +164,3 @@ Security incidents → security_reviewer + architect + orchestrator incident man
 - No further action required as determined by orchestrator coordination
 - Clear completion criteria from orchestrator workflow met
 - Current phase priorities defined by orchestrator respected
-
-## Project Context Usage - Orchestrator-Managed
-
-- **Current Status**: Foundation setup phase, building MCP Swarm Intelligence Server with enhanced memory and coordination capabilities
-- **Active Roadmap**: MCP_COMPREHENSIVE_TODO.md managed through orchestrator and specialist coordination
-- **Agent Coordination**: ALL coordination managed through orchestrator workflow with swarm intelligence enhancement
-- **Quality Gates**: Orchestrator-defined excellence standards while implementing MCP server development phases
-- **Workflow Management**: ALL development activities coordinated through orchestrator's enhanced multi-agent management system with persistent memory
-
-

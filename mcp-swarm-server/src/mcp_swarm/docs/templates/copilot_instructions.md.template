@@ -1,0 +1,69 @@
+# {project_name} Copilot Instructions
+
+## Project Overview
+
+{project_name} is a {project_description} featuring {key_features}.
+
+## Agent Configuration System - Orchestrator-Driven Multi-Agent Workflow
+
+This project uses the EXACT SAME agent configuration system as proven in BitNet-Rust, adapted for MCP development. **THE ORCHESTRATOR IS THE CENTRAL COMMAND** that routes all work and manages all specialist coordination with enhanced swarm intelligence and persistent memory capabilities.
+
+### 🎯 MANDATORY ORCHESTRATOR-FIRST WORKFLOW
+
+**ALWAYS START WITH THE ORCHESTRATOR** - This is non-negotiable for any development work:
+
+#### **Step 1: ORCHESTRATOR CONSULTATION (REQUIRED)**
+Before doing ANY work, **ALWAYS read `agent-config/orchestrator.md` FIRST** to:
+- **Understand current project context** and MCP development priorities
+- **Get proper task routing** to appropriate MCP specialist agents
+- **Identify multi-agent coordination needs** for complex MCP features
+- **Access workflow management** and quality gate requirements
+- **Integrate with agent hooks system** for automated lifecycle management
+
+#### **Step 2: ORCHESTRATOR ROUTING DECISION**
+The orchestrator will route you to appropriate specialists using this framework:
+- **Primary Agent Selection**: Based on task domain and complexity
+- **Secondary Agent Coordination**: For cross-domain or complex requirements
+- **Quality Gate Assignment**: Validation and review requirements
+- **Workflow Coordination**: Timeline and dependency management
+
+#### **Step 3: SPECIALIST CONSULTATION (ORCHESTRATOR-GUIDED)**
+After orchestrator routing, consult the specific specialist agents identified:
+- **Read specialist agent configs** for domain-specific context and expertise
+- **Understand agent intersections** and collaboration patterns
+- **Follow established workflows** and handoff procedures
+- **Maintain orchestrator coordination** throughout the work
+
+## MCP Server Integration
+
+### Available MCP Tools
+
+{mcp_tools_list}
+
+### MCP Server Configuration
+
+{mcp_server_config}
+
+### Agent-Config Integration
+
+{agent_config_integration}
+
+## Agent Configuration Hierarchy & Orchestrator Authority
+
+{agent_hierarchy}
+
+## Multi-Agent Coordination Patterns (Orchestrator-Managed)
+
+{coordination_patterns}
+
+## Current Priority ({current_phase})
+
+{current_priority}
+
+## Workflow Rules - Orchestrator-Driven
+
+{workflow_rules}
+
+## When to Stop - Orchestrator-Defined Criteria
+
+{stop_criteria}
