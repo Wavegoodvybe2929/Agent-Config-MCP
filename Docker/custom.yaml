@@ -1,0 +1,54 @@
+# MCP Swarm Intelligence Server Catalog
+# Comprehensive tool listing for Claude Desktop integration
+
+mcpServers:
+  swarm-intelligence:
+    command: "python3"
+    args: ["mcp_swarm_intelligence_server.py"]
+    cwd: "."
+    env:
+      PYTHONPATH: "."
+    tools:
+      - agent_assignment
+      - hive_mind_query
+      - swarm_consensus
+      - adaptive_coordination
+      - agent_config_manager
+      - knowledge_contribution
+      - ecosystem_management
+      - semantic_search
+      - performance_metrics
+      - decision_confidence
+      - agent_discovery
+      - dynamic_coordination
+      - complete_pipeline
+      - knowledge_extraction
+      - knowledge_synthesis
+      - knowledge_validation
+      - automation_validation
+      - decision_audit
+      - risk_assessment
+      - directory_manager
+      - agent_hooks
+      - confidence_aggregation
+      - consensus_algorithms
+      - coordination_strategies
+      - copilot_instructions_manager
+      - self_monitoring
+      - explanation
+      - fuzzy_matcher
+      - knowledge_classifier
+      - knowledge_quality
+      - load_balancer
+      - mcda
+      - minority_opinion
+      - strategy_selector
+      - mcp_server_manager
+      - adaptive_learning
+      - knowledge_updater
+      - coordination_pattern_learning
+    resources:
+      - agent_configs
+      - knowledge_base
+      - performance_data
+      - decision_history

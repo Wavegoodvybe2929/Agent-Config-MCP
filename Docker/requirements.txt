@@ -1,0 +1,35 @@
+# MCP Core Dependencies
+mcp[cli]>=1.2.0
+httpx
+uvicorn
+fastapi
+
+# ML/AI Dependencies for Swarm Intelligence
+numpy
+scipy
+scikit-learn
+networkx
+
+# Database Dependencies
+aiosqlite
+sqlite-utils
+
+# Monitoring and Metrics
+prometheus-client
+psutil
+watchdog
+
+# Utilities and Configuration
+pydantic
+click
+python-dotenv
+structlog
+PyYAML
+
+# Additional Libraries for Advanced Features
+asyncio-mqtt
+matplotlib
+plotly
+pandas
+jsonschema
+cryptography
