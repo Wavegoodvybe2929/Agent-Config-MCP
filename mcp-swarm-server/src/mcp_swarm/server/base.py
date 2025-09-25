@@ -5,6 +5,8 @@ Base MCP Server implementation for swarm intelligence.
 from typing import Any, Dict, List, Optional, Union, TYPE_CHECKING
 import asyncio
 import logging
+import sys
+import json
 
 if TYPE_CHECKING:
     from .tools import ToolRegistry
@@ -436,6 +438,109 @@ class SwarmMCPServer:
             
         self._initialized = False
         self._logger.info("Server shutdown complete")
+        
+    async def run_stdio(self) -> None:
+        """Run the server with stdio transport for MCP clients."""
+        if not self._initialized:
+            await self.initialize()
+            
+        self._logger.info("Starting MCP server with stdio transport")
+        self._logger.info("Server ready to accept MCP protocol connections via stdin/stdout")
+        
+        # For now, implement a basic message loop
+        # In a full implementation, this would handle MCP protocol messages
+        try:
+            while True:
+                # Basic message loop - read from stdin, process, write to stdout
+                try:
+                    # Read line from stdin (MCP client sends JSON-RPC messages)
+                    message = await asyncio.get_event_loop().run_in_executor(
+                        None, sys.stdin.readline
+                    )
+                    
+                    if not message.strip():
+                        break  # EOF or empty message
+                        
+                    self._logger.debug("Received message: %s", message.strip())
+                    
+                    # Process MCP message (basic implementation)
+                    response = await self._process_mcp_message(message.strip())
+                    
+                    # Send response to stdout
+                    print(response)
+                    sys.stdout.flush()
+                    
+                except KeyboardInterrupt:
+                    break
+                except Exception as e:
+                    self._logger.error("Error processing message: %s", e)
+                    
+        except Exception as e:
+            self._logger.error("Server error: %s", e)
+        finally:
+            await self.shutdown()
+            
+    async def _process_mcp_message(self, message: str) -> str:
+        """Process an MCP protocol message.
+        
+        Args:
+            message: JSON-RPC message from MCP client
+            
+        Returns:
+            JSON-RPC response
+        """
+        # Parse JSON-RPC message
+        try:
+            request = json.loads(message)
+        except json.JSONDecodeError:
+            return json.dumps({
+                "jsonrpc": "2.0",
+                "error": {"code": -32700, "message": "Parse error"},
+                "id": None
+            })
+            
+        # Basic MCP protocol handling
+        method = request.get("method")
+        request_id = request.get("id")
+        
+        if method == "initialize":
+            # Return server capabilities
+            response = {
+                "jsonrpc": "2.0",
+                "result": {
+                    "protocolVersion": "2024-11-05",
+                    "capabilities": {
+                        "tools": {},
+                        "resources": {},
+                        "experimental": {
+                            "swarm_coordination": {"version": "1.0"},
+                            "memory_persistence": {"version": "1.0"}
+                        }
+                    },
+                    "serverInfo": {
+                        "name": self.name,
+                        "version": self.version
+                    }
+                },
+                "id": request_id
+            }
+        elif method == "tools/list":
+            # Return available tools
+            tools = list(self._tools_registry.keys())  # Use registry keys for now
+            response = {
+                "jsonrpc": "2.0",
+                "result": {"tools": [{"name": name, "description": f"Tool: {name}"} for name in tools]},
+                "id": request_id
+            }
+        else:
+            # Method not found
+            response = {
+                "jsonrpc": "2.0",
+                "error": {"code": -32601, "message": "Method not found"},
+                "id": request_id
+            }
+            
+        return json.dumps(response)
         
     @property
     def capabilities(self) -> Any:
