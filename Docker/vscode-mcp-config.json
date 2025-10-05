@@ -1,0 +1,17 @@
+{
+  "mcpServers": {
+    "mcp-swarm-intelligence": {
+      "command": "docker",
+      "args": [
+        "run", "--rm", "-i",
+        "-v", "/tmp/mcp-swarm-data:/app/data",
+        "--name", "mcp-swarm-vscode",
+        "mcp-swarm-server:latest"
+      ],
+      "env": {
+        "PYTHONUNBUFFERED": "1",
+        "SWARM_DB_PATH": "/app/data/memory.db"
+      }
+    }
+  }
+}

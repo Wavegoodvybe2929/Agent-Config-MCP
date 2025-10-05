@@ -1114,7 +1114,7 @@ async def confidence_aggregation(confidence_values: str = "", method: str = "wei
         return f"❌ Error: {str(e)}"
 
 @mcp.tool()
-async def consensus_algorithms(algorithm: str = "majority_vote", options: str = "", _agent_preferences: str = "") -> str:
+async def consensus_algorithms(algorithm: str = "majority_vote", options: str = "", agent_preferences: str = "") -> str:
     """Apply various consensus mechanisms."""
     logger.info("Executing consensus_algorithms: %s", algorithm)
     
@@ -1213,7 +1213,7 @@ async def coordination_strategies(strategy_type: str = "optimal", context_factor
         return f"❌ Error: {str(e)}"
 
 @mcp.tool()
-async def copilot_instructions_manager(action: str = "create", instruction_type: str = "full", _mcp_config: str = "", output_path: str = ".github/copilot-instructions.md") -> str:
+async def copilot_instructions_manager(action: str = "create", instruction_type: str = "full", mcp_config: str = "", output_path: str = ".github/copilot-instructions.md") -> str:
     """Manage copilot instructions with MCP server integration."""
     logger.info("Executing copilot_instructions_manager action: %s", action)
     
@@ -1418,7 +1418,7 @@ async def adaptive_learning_tool(operation: str = "get_status", parameters: str 
         return f"❌ Error: {str(e)}"
 
 @mcp.tool()
-async def self_monitoring_tool(monitoring_scope: str = "full", _optimization_level: str = "standard", auto_remediation: str = "true") -> str:
+async def self_monitoring_tool(monitoring_scope: str = "full", optimization_level: str = "standard", auto_remediation: str = "true") -> str:
     """Comprehensive self-monitoring and optimization tool."""
     logger.info("Executing self_monitoring_tool scope: %s", monitoring_scope)
     
@@ -1517,7 +1517,7 @@ async def self_monitoring_tool(monitoring_scope: str = "full", _optimization_lev
         return f"❌ Error: {str(e)}"
 
 @mcp.tool()
-async def load_balancer(strategy: str = "adaptive", _agents_list: str = "", workload_data: str = "") -> str:
+async def load_balancer(strategy: str = "adaptive", agents_list: str = "", workload_data: str = "") -> str:
     """Intelligent load balancing across swarm agents."""
     logger.info("Executing load_balancer strategy: %s", strategy)
     
@@ -1627,7 +1627,7 @@ async def load_balancer(strategy: str = "adaptive", _agents_list: str = "", work
         return f"❌ Error: {str(e)}"
 
 @mcp.tool()
-async def self_monitoring(check_type: str = "system", _detail_level: str = "basic") -> str:
+async def self_monitoring(check_type: str = "system", detail_level: str = "basic") -> str:
     """Monitor server and agent health metrics."""
     logger.info("Executing self_monitoring check: %s", check_type)
     
@@ -1673,7 +1673,7 @@ async def self_monitoring(check_type: str = "system", _detail_level: str = "basi
 # === ADDITIONAL TOOLS TO REACH 37+ ===
 
 @mcp.tool()
-async def explanation(query: str = "", _explanation_depth: str = "standard") -> str:
+async def explanation(query: str = "", explanation_depth: str = "standard") -> str:
     """Provide explanations for agent decisions."""
     try:
         if not query.strip():

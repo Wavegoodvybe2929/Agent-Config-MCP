@@ -1,54 +1,66 @@
-# MCP Swarm Intelligence Server Catalog
-# Comprehensive tool listing for Claude Desktop integration
+# MCP Swarm Intelligence Server Catalog - Docker Integration
+# Production-ready Docker-based MCP server for Claude Desktop and VS Code
 
 mcpServers:
-  swarm-intelligence:
-    command: "python3"
-    args: ["mcp_swarm_intelligence_server.py"]
-    cwd: "."
+  mcp-swarm-intelligence:
+    command: "docker"
+    args: [
+      "run", "--rm", "-i",
+      "-v", "/tmp/mcp-swarm-data:/app/data",
+      "--name", "mcp-swarm-runtime",
+      "mcp-swarm-server:latest"
+    ]
     env:
-      PYTHONPATH: "."
+      PYTHONUNBUFFERED: "1"
+      SWARM_DB_PATH: "/app/data/memory.db"
     tools:
+      # Core Swarm Intelligence Tools
       - agent_assignment
-      - hive_mind_query
-      - swarm_consensus
+      - swarm_consensus  
       - adaptive_coordination
-      - agent_config_manager
+      - coordination_strategies
+      
+      # Knowledge & Hive Mind Tools
+      - hive_mind_query
       - knowledge_contribution
-      - ecosystem_management
       - semantic_search
-      - performance_metrics
-      - decision_confidence
-      - agent_discovery
-      - dynamic_coordination
-      - complete_pipeline
-      - knowledge_extraction
-      - knowledge_synthesis
-      - knowledge_validation
-      - automation_validation
-      - decision_audit
-      - risk_assessment
-      - directory_manager
+      - knowledge_synthesis_tool
+      
+      # Memory & Persistence Tools
+      - memory_management
+      - persistent_memory_manager
+      - pattern_analysis_tool
+      
+      # Configuration & Management Tools
+      - agent_config_manager
+      - copilot_instructions_manager
+      - ecosystem_management
       - agent_hooks
+      
+      # Performance & Monitoring Tools
+      - performance_metrics
+      - self_monitoring_tool
+      - predictive_maintenance_tool
+      - resource_optimization_tool
+      
+      # Quality & Validation Tools
+      - quality_assurance_tool
+      - compliance_validator_tool
+      - anomaly_detection_tool
+      - knowledge_quality_validator
+      
+      # Advanced Intelligence Tools
+      - adaptive_learning_tool
+      - workflow_automation_tool
+      
+      # Utility Tools
+      - directory_manager
       - confidence_aggregation
       - consensus_algorithms
-      - coordination_strategies
-      - copilot_instructions_manager
-      - self_monitoring
-      - explanation
-      - fuzzy_matcher
-      - knowledge_classifier
-      - knowledge_quality
-      - load_balancer
-      - mcda
-      - minority_opinion
-      - strategy_selector
-      - mcp_server_manager
-      - adaptive_learning
-      - knowledge_updater
-      - coordination_pattern_learning
+      - decision_audit
     resources:
-      - agent_configs
-      - knowledge_base
-      - performance_data
-      - decision_history
+      - agent_configs           # Agent configuration resources and templates
+      - knowledge_base          # Collective knowledge and learning resources  
+      - memory_snapshots        # Persistent memory state snapshots
+      - performance_metrics     # Real-time coordination performance data
+      - decision_history        # Historical decision-making records
